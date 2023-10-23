@@ -2,28 +2,31 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                Empleado: {{ empleado.nombre  }}
+                Empleado: {{ empleado.nombre }}
             </div>
             <div class="card-body">
 
                 <form v-on:submit.prevent="registrarEmpleado">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nombre:</label>
-                        <input type="name" class="form-control" id="Name" placeholder="Ingresa tu Nombre" v-model="empleado.nombre" required>
+                        <input type="name" class="form-control" id="Name" placeholder="Ingresa tu Nombre"
+                            v-model="empleado.nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Correo:</label>
-                        <input type="name" class="form-control" id="email" placeholder="Ingresa tu Correo" v-model="empleado.correo" required>
+                        <input type="name" class="form-control" id="email" placeholder="Ingresa tu Correo"
+                            v-model="empleado.correo" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password:</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="empleado.password" required>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                            v-model="empleado.password" required>
                     </div>
                     <div class="btn-group mt-3" role="group" style="">
                         <button type="submit" class="btn btn-primary mx-1">Registar</button>
-                        <router-link :to="{name: 'show'}" class="btn btn-secondary mx-1">Cancelar </router-link>
-                        
+                        <router-link :to="{ name: 'show' }" class="btn btn-secondary mx-1">Cancelar </router-link>
+
                     </div>
 
                 </form>
@@ -53,9 +56,9 @@ export default {
                 password: this.empleado.password
             }
             fetch('http://localhost/empleados/?insertar=1', {
-                    method: 'POST',
-                    body: JSON.stringify(enviarData),
-                })
+                method: 'POST',
+                body: JSON.stringify(enviarData),
+            })
                 .then(res => res.json())
                 .then(res => {
                     console.log(res)

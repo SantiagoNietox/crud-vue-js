@@ -35,10 +35,10 @@ export default {
             empleado: {}
         }
     },
-  created: function () {
-    this.getInformation();
+    created: function () {
+        this.getInformation();
 
-  },
+    },
     methods: {
         getInformation() {
             fetch('http://localhost/empleados/?consultar=' + this.$route.params.id)
@@ -49,25 +49,25 @@ export default {
                 })
                 .catch(error => console.log(error));
         },
-    updateData(){
-        var enviarData = {
-            nombre: this.empleado.nombre,
-            correo: this.empleado.correo,
-            id: this.$route.params.id
-            
-        }
+        updateData() {
+            var enviarData = {
+                nombre: this.empleado.nombre,
+                correo: this.empleado.correo,
+                id: this.$route.params.id
+
+            }
             console.log(enviarData);
-        fetch('http://localhost/empleados/?actualizar=1', {
-            method: 'POST',
-            body: JSON.stringify(enviarData),
-        })
-        .then(respuesta => respuesta.json())
-        
-           // console.log(datosRespuesta)
+            fetch('http://localhost/empleados/?actualizar=1', {
+                method: 'POST',
+                body: JSON.stringify(enviarData),
+            })
+                .then(respuesta => respuesta.json())
+
+            // console.log(datosRespuesta)
             window.location.href = "../show";
         }
-        
-       
+
+
 
     }
 }
