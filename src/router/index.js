@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import MyCreate from '../components/MyCreate.vue'
 import MyEdit from '../components/MyEdit.vue'
 import MyShow from '../components/MyShow.vue'
@@ -8,24 +7,23 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: MyCreate
   },
-{
+  {
     path: '/create',
     name: 'create',
     component: MyCreate
-},
-{
-    path: '/edit',
+  },
+  {
+    path: '/edit/:id',
     name: 'edit',
     component: MyEdit
-},
-{
+  },
+  {
     path: '/show',
     name: 'show',
     component: MyShow
-},
-
+  },
   {
     path: '/about',
     name: 'about',

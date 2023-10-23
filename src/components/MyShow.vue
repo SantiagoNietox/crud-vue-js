@@ -25,7 +25,7 @@
                             <td>{{ empleado.nombre }}</td>
                             <td>{{ empleado.correo }}</td>
                             <td>
-                                <router-link :to="{name: 'edit', param:{id:empleado.id}}" class="btn btn-primary mx-1">Editar </router-link>
+                                <router-link :to="{name: 'edit', params:{id:empleado.id}}" class="btn btn-primary mx-1">Editar </router-link>
                                 <button href="" class="btn btn-danger" type="button" v-on:click="deleteEmpleado(empleado.id)">Eliminar</button>
                             </td>
                         </tr>

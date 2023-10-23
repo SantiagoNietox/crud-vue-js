@@ -9,16 +9,16 @@
                 <form v-on:submit.prevent="registrarEmpleado">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nombre:</label>
-                        <input type="name" class="form-control" id="Name" placeholder="Ingresa tu Nombre" v-model="empleado.nombre">
+                        <input type="name" class="form-control" id="Name" placeholder="Ingresa tu Nombre" v-model="empleado.nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Correo:</label>
-                        <input type="name" class="form-control" id="email" placeholder="Ingresa tu Correo" v-model="empleado.correo">
+                        <input type="name" class="form-control" id="email" placeholder="Ingresa tu Correo" v-model="empleado.correo" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password:</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="empleado.password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="empleado.password" required>
                     </div>
                     <div class="btn-group mt-3" role="group" style="">
                         <button type="submit" class="btn btn-primary mx-1">Registar</button>
